@@ -4,38 +4,39 @@
 
 
 char *findit(char *str, char *find){
-
+	printf("str:%s \n",str);
 
 	if (*find == '\0')
 	{
-		printf("str:%s | find : %s\n",str, find );
-		return find;
+		return str ;
 	}
 
-	if (*str == *find)
+  if (*str == '\0') {
+        return NULL;
+    }
+
+	if ( *str == *find && findit(str + 1, find + 1) == str + 1)
 	{
-		if (*findit(str+1, find +1) == '\0')
-		{
-			printf("found\n");
-			// printf("%s\n", str-1);
-			return str-1;
-		}
+		return str;
 	}
 	else
 	{
-		if (*str != '\0')
-			return findit(str+1, find);
-		else
-			return NULL;
+		return findit(str+1, find);
 	}
+
 }
 
 int main(){
 	char str[] = "this is a test";
-	char find[] = "is";
-	// find2 = "t";
-	// find3 = "test";
+	// char find[] = "his";
+	// char *str2 = str;
+	// char find[] = "t";
+	char find[] = "test";
 	char *x;
 	x = findit(str,find);
-	printf("%s\n", x);
+	printf("answer:%s\n", x);
+	// x = findit(str2,find);
+	// printf("answer2:%s\n", str2);
+
+	return 0;
 }
