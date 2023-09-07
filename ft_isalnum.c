@@ -11,7 +11,9 @@
 /* ************************************************************************** */
 
 //alphabets and numeric
-int	ft_isalnum(char c)
+//       int isalnum(int c);
+
+int	ft_isalnum(int c)
 {
 	if ((c >= 48 && c <= 57)
 		|| (c >= 65 && c <= 90)
