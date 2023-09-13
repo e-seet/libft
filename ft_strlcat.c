@@ -14,6 +14,7 @@
 // The strlcpy() and strlcat() functions copy and concatenate strings
 // respectively. They are designed to be safer, more consistent, and
 // less error prone replacements for strncpy(3) and strncat(3).
+
 // Unlike those functions, strlcpy() and strlcat()  take the full
 //size of the buffer (not just the length) and guarantee to NULL 
 // terminate the result (as long as size is larger than 0 or, in 
@@ -22,9 +23,6 @@
 // in size.  Also note that strlcpy() and strlcat() only operate on
 //true “C” strings.  This means that for strlcpy() src must be NUL
 //terminated and for strlcat() both src and dst must be NUL-terminated.
-
-// The strlcpy() function copies up to size - 1 characters from the
-// NUL-terminated string src to dst, NUL-terminating the result.
 
 // The strlcat() function appends the NUL-terminated string src to
 // the end of dst. It will append at most size- strlen(dst) - 1 bytes,
@@ -105,26 +103,39 @@ unsigned int    ft_strlcat(char *dest, char *src, unsigned int size)
 
 size_t  ft_strlcat(char *dst, const char *src, size_t size)
 {
+    int i;
+    int j;
 
+    i = 0;
+    j = 0;
+    while (dst[j] != '\0')
+        j++;
+    while(*src != '\0' && size > i)
+    {
+        dst[j + i] = src[i];
+        i++;
+    }
+    dst[j + i] = '\0';
+    return (j + i);
 }
 
 #include <stdio.h>
 #include <string.h>
 
 // Custom strlcat function for testing purposes
-size_t custom_strlcat(char *dest, const char *src, size_t size) {
-    size_t dest_len = strlen(dest);
-    size_t src_len = strlen(src);
-    size_t total_len = dest_len + src_len;
+// size_t custom_strlcat(char *dest, const char *src, size_t size) {
+//     size_t dest_len = strlen(dest);
+//     size_t src_len = strlen(src);
+//     size_t total_len = dest_len + src_len;
 
-    if (size <= dest_len)
-        return total_len + size; // Destination buffer too small, return total length required.
+//     if (size <= dest_len)
+//         return total_len + size; // Destination buffer too small, return total length required.
 
-    strncat(dest, src, size - dest_len - 1); // Leave room for null-terminator
-    dest[size - 1] = '\0'; // Ensure null-termination
+//     strncat(dest, src, size - dest_len - 1); // Leave room for null-terminator
+//     dest[size - 1] = '\0'; // Ensure null-termination
 
-    return total_len;
-}
+//     return total_len;
+// }
 
 int main() {
     char dest[20]; // Destination buffer
