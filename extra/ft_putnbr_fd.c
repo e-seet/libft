@@ -16,7 +16,6 @@
 #include <stdlib.h>
 #include <unistd.h> // for write function
 
-
 //previous code
 char	*reverse(char *str, int i)
 {
@@ -64,16 +63,17 @@ char	*ft_itoa(int n)
 }
 //end of previous code
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	write(fd, ft_itoa(n), 20);
 }
 
-int main() {
-	ft_putnbr_fd(123, 1);
-	write(1, "\n", 1);
-	ft_putnbr_fd(-123, 1);
-	write(1, "\n", 1);
-	ft_putnbr_fd(0, 1);
-	return 0;
-}
+// int main(void)
+// {
+// 	ft_putnbr_fd(123, 1);
+// 	write(1, "\n", 1);
+// 	ft_putnbr_fd(-123, 1);
+// 	write(1, "\n", 1);
+// 	ft_putnbr_fd(0, 1);
+// 	return (0);
+// }

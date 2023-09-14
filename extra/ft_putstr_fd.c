@@ -27,7 +27,7 @@ size_t	ft_strlen(const char *s)
 
 // s: The string to output.
 // fd: The file descriptor on which to write
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	write(fd, s, ft_strlen(s));
 }

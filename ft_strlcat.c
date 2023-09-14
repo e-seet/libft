@@ -45,80 +45,53 @@
 // potential security problems in incorrect code.
 
 // size_t strlcat(char *dst, const char *src, size_t size);
-
 /*
  
-
 unsigned int    ft_strlen(const char *s) 
-
 { 
+	unsigned int    i; 
 
-    unsigned int    i; 
-
-    i = 0; 
-
-    while (*(s++)) 
-
-        i++; 
-
-    return (i); 
-
+	i = 0; 
+	while (*(s++)) 
+		i++; 
+	return (i); 
 } 
 
 unsigned int    ft_strlcat(char *dest, char *src, unsigned int size) 
-
 { 
+	unsigned int    i; 
+	unsigned int    dest_len; 
 
-    unsigned int    i; 
-
-    unsigned int    dest_len; 
-
-    i = -1; 
-
-    dest_len = ft_strlen(dest); 
-
- 
-
-    if (size <= dest_len) 
-
-        return (ft_strlen(src) + size); 
-
- 
-
-    while ((dest_len + ++i) < (size - 1) && src[i]) 
-
-        dest[dest_len + i] = src[i]; 
-
- 
-
-    dest[dest_len + i] = 0; 
-
- 
-
-    return (dest_len + ft_strlen(src)); 
-
+	i = -1; 
+	dest_len = ft_strlen(dest); 
+	if (size <= dest_len) 
+		return (ft_strlen(src) + size); 
+	while ((dest_len + ++i) < (size - 1) && src[i]) 
+		dest[dest_len + i] = src[i]; 
+	dest[dest_len + i] = 0; 
+	return (dest_len + ft_strlen(src)); 
 } 
 */
 #include <stddef.h>
 
-size_t  ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-    int i;
-    int j;
+	int	i;
+	int	j;
 
-    i = 0;
-    j = 0;
-    while (dst[j] != '\0')
-        j++;
-    while(*src != '\0' && size > i)
-    {
-        dst[j + i] = src[i];
-        i++;
-    }
-    dst[j + i] = '\0';
-    return (j + i);
+	i = 0;
+	j = 0;
+	while (dst[j] != '\0')
+		j++;
+	while (*src != '\0' && size > i)
+	{
+		dst[j + i] = src[i];
+		i++;
+	}
+	dst[j + i] = '\0';
+	return (j + i);
 }
-
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -129,35 +102,40 @@ size_t  ft_strlcat(char *dst, const char *src, size_t size)
 //     size_t total_len = dest_len + src_len;
 
 //     if (size <= dest_len)
-//         return total_len + size; // Destination buffer too small, return total length required.
+//         return total_len + size; 
+// Destination buffer too small, return total length required.
 
-//     strncat(dest, src, size - dest_len - 1); // Leave room for null-terminator
+//     strncat(dest, src, size - dest_len - 1); 
+// Leave room for null-terminator
 //     dest[size - 1] = '\0'; // Ensure null-termination
 
 //     return total_len;
 // }
 
 int main() {
-    char dest[20]; // Destination buffer
+	char dest[20]; // Destination buffer
 
-    // Test case 1: Basic Concatenation
-    const char *src1 = "Hello, ";
-    const char *src2 = "World!";
-    size_t result1 = custom_strlcat(dest, src1, sizeof(dest));
-    result1 = custom_strlcat(dest, src2, sizeof(dest)); // Concatenate src2 to dest
-    printf("Test Case 1: Concatenated %zu characters: %s\n", result1, dest);
+	// Test case 1: Basic Concatenation
+	const char *src1 = "Hello, ";
+	const char *src2 = "World!";
+	size_t result1 = custom_strlcat(dest, src1, sizeof(dest));
+	result1 = custom_strlcat(dest, src2, sizeof(dest)); 
+	// Concatenate src2 to dest
+	printf("Test Case 1: Concatenated %zu characters: %s\n", result1, dest);
 
-    // Test case 2: Concatenate to an empty destination
-    char empty_dest[10] = "";
-    const char *src3 = "This is a test.";
-    size_t result2 = custom_strlcat(empty_dest, src3, sizeof(empty_dest));
-    printf("Test Case 2: Concatenated %zu characters to empty dest: %s\n", result2, empty_dest);
+	// Test case 2: Concatenate to an empty destination
+	char empty_dest[10] = "";
+	const char *src3 = "This is a test.";
+	size_t result2 = custom_strlcat(empty_dest, src3, sizeof(empty_dest));
+	printf("Test Case 2: Concatenated %zu characters
+	 to empty dest: %s\n", result2, empty_dest);
 
-    // Test case 3: Destination buffer is too small
-    char small_dest[5] = "123";
-    const char *src4 = "456789";
-    size_t result3 = custom_strlcat(small_dest, src4, sizeof(small_dest));
-    printf("Test Case 3: Concatenated %zu characters to small dest: %s\n", result3, small_dest);
+	// Test case 3: Destination buffer is too small
+	char small_dest[5] = "123";
+	const char *src4 = "456789";
+	size_t result3 = custom_strlcat(small_dest, src4, sizeof(small_dest));
+	printf("Test Case 3: Concatenated %zu characters
+	 to small dest: %s\n", result3, small_dest);
 
-    return 0;
-}
+	return 0;
+}*/

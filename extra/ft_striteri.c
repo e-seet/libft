@@ -20,9 +20,9 @@
 // address to ’f’ to be modified if necessary.
 #include <stddef.h>
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (s == NULL)
@@ -32,32 +32,30 @@ void ft_striteri(char *s, void (*f)(unsigned int, char*))
 		f(i, &s[i]);
 		i++;
 	}
-		
 }
 
+// #include "stdio.h"
+// void uppercase_modifier(unsigned int index, char *c) {
+//     if (*c >= 'a' && *c <= 'z')
+//     {
+//         // Convert to uppercase
+//         *c = *c - 'a' + 'A';
+//     }
+// }
 
-#include "stdio.h"
-// Example function: Convert characters to uppercase
-void uppercase_modifier(unsigned int index, char *c) {
-    // Check if the character is lowercase
-	   if (*c >= 'a' && *c <= 'z') {
-        // Convert to uppercase
-        *c = *c - 'a' + 'A';
-    }
-}
+// int main() {
+//     // Test Case 1: Modify characters to uppercase
+//     char input1[] = "Hello, World!";
+//     ft_striteri(input1, uppercase_modifier);
 
-int main() {
-    // Test Case 1: Modify characters to uppercase
-    char input1[] = "Hello, World!";
-    ft_striteri(input1, uppercase_modifier);
+//     printf("Test Case 1: Modified String 1: %s\n", input1);
 
-    printf("Test Case 1: Modified String 1: %s\n", input1);
+//     // Test Case 2: NULL input string
+//     char *input2 = NULL;
+//     ft_striteri(input2, uppercase_modifier);
+//      // Should handle NULL input gracefully
 
-    // Test Case 2: NULL input string
-    char *input2 = NULL;
-    ft_striteri(input2, uppercase_modifier); // Should handle NULL input gracefully
+//     printf("Test Case 2: Modified NULL input string.\n");
 
-    printf("Test Case 2: Modified NULL input string.\n");
-
-    return 0;
-}
+//     return 0;
+// }
