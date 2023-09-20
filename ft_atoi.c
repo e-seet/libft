@@ -35,13 +35,11 @@ int	ft_atoi(char *str)
 	i = 0;
 	sign = 1;
 	num = 0;
-
-	// tnvfr 
-	while (str[i] == 32 || str[i] == '\t'|| str[i] == '\n' ||str[i] == '\v'
-		||str[i] == '\f'|| str[i] == '\r' )
+	while (str[i] == 32 || str[i] == '\t' || str[i] == '\n' 
+		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
 		i++;
 	if (str[i] == '-')
-			sign = sign * -1;
+		sign = sign * -1;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (str[i] >= 48 && str[i] <= 57)

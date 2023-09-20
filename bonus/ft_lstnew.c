@@ -30,9 +30,10 @@ typedef struct s_list
 // The new node
 
 #include "../libft.h"
-t_list *ft_lstnew(void *content)
+
+t_list	*ft_lstnew(void *content)
 {
-	t_list *node;
+	t_list	*node;
 
 	node = (t_list *)malloc(sizeof(t_list));
 	if (!node)
@@ -46,11 +47,14 @@ t_list *ft_lstnew(void *content)
 int main()
 {
     t_list *newList = ft_lstnew("Test");
-    printf("ft_lstnew Test: %s\n", (char *) newList->content); // Expected output: "Test"
+    printf("ft_lstnew Test: %s\n", 
+	(char *) newList->content); // Expected output: "Test"
 
     t_list *newList2 = ft_lstnew("");
-    printf("ft_lstnew2 Test: %s\n", (char *) newList2->content); 
+    printf("ft_lstnew2 Test: %s\n", 
+	(char *) newList2->content); 
 	
     t_list *newList3 = ft_lstnew(NULL);
-    printf("ft_lstnew3 Test: %s\n", (char *) newList3->content);
+    printf("ft_lstnew3 Test: %s\n", 
+	(char *) newList3->content);
 }*/

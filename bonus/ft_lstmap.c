@@ -103,21 +103,21 @@ void ft_lstclear(t_list **lst, void (*del)(void *))
 
 #include "../libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *newlist;
-	t_list *node;
-	
+	t_list	*newlist;
+	t_list	*node;
+
 	newlist = NULL;
-	if ( f == NULL || lst == NULL)
-		return NULL;
+	if (f == NULL || lst == NULL)
+		return (NULL);
 	while (lst->next != NULL)
 	{
-		node = ft_lstnew( lst -> content);
+		node = ft_lstnew(lst -> content);
 		if (!node)
 		{
 			ft_lstclear(&newlist, del);
-			break;
+			break ;
 		}
 		else
 		{
@@ -125,7 +125,7 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			lst = lst -> next;
 		}
 	}
-	return newlist;
+	return (newlist);
 }
 
 /*

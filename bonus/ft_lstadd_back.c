@@ -19,19 +19,17 @@ typedef struct s_list
 	struct s_list *next;
 } t_list; */
 
-
 // parameter
 // lst: The address of a pointer to the first link of
 // a list.
 // new: The address of a pointer to the node to be
 // added to the list.
 
-
 #include "../libft.h"
 // add node to the back
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *curr;
+	t_list	*curr;
 
 	curr = *lst;
 	if (curr == NULL && new == NULL)

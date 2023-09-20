@@ -16,7 +16,12 @@ typedef struct s_list
 {
 	void *content;
 	struct s_list *next;
-} t_list;*/
+} t_list;
+void	del(void *content)
+{
+	free(content);
+}
+*/
 
 // parameter
 // lst: The address of a pointer to a node.
@@ -31,15 +36,12 @@ typedef struct s_list
 // NULL.
 
 #include "../libft.h"
-void del(void *content)
+
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	free(content);
-}
-void ft_lstclear(t_list **lst, void (*del)(void *))
-{
-	t_list *prev;
-	t_list *curr;
-	t_list *head;
+	t_list	*prev;
+	t_list	*curr;
+	t_list	*head;
 
 	head = *lst;
 	curr = *lst;

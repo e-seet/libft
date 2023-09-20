@@ -21,9 +21,10 @@ typedef struct s_list
 // parameter: lst: The beginning of the list
 // return the last node
 #include "../libft.h"
-t_list *ft_lstlast(t_list *lst)
+
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list *curr;
+	t_list	*curr;
 
 	curr = lst;
 	if (curr == NULL)
@@ -63,7 +64,8 @@ t_list *ft_lstnew(void *content)
 void displayList(t_list *lst) {
     t_list *current = lst;
     while (current != NULL) {
-        printf("node->%s\n", (char *)current->content);
+        printf("node->%s\n", 
+		(char *)current->content);
         current = current->next;
     }
 }
@@ -81,7 +83,8 @@ int main()
    
 	displayList(list);
     t_list *last = ft_lstlast(list);
-    printf("ft_lstlast Test: %s\n", (char *)last->content); // Expected output: "Front"
+    printf("ft_lstlast Test: %s\n", 
+	(char *)last->content); // Expected output: "Front"
    
 	return 0;
 }*/

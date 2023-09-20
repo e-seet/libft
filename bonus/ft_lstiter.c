@@ -35,10 +35,11 @@ void print(void *content) {
 // ’f’ on the content of each node.
 
 #include "../libft.h"
-void ft_lstiter(t_list *lst, void (*f)(void *))
+
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list *curr;
-	
+	t_list	*curr;
+
 	curr = lst;
 	while (curr -> next != NULL)
 	{

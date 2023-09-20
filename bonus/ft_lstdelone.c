@@ -34,20 +34,24 @@ void del(void *content)
 // ’next’ must not be freed.
 
 #include "../libft.h"
-void ft_lstdelone(t_list *lst, void (*del)(void*))
+
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	del(lst);
+	if (!del)
+		return ;
+	del(lst->content);
+	free(lst);
 }
 
 /*
 #include <stdio.h>
 // Function to display the content of a linked list
 void displayList(t_list *lst) {
-    t_list *current = lst;
-    while (current != NULL) {
-        printf("node -> %s\n", (char *)current->content);
-        current = current->next;
-    }
+	t_list *current = lst;
+	while (current != NULL) {
+		printf("node -> %s\n", (char *)current->content);
+		current = current->next;
+	}
 }
 t_list *ft_lstnew(void *content)
 {
@@ -65,22 +69,22 @@ void ft_lstadd_front(t_list **lst, t_list *new)
 	t_list *temp;
 
 	temp = *lst;
-    new -> next = temp;
-    *lst = new;
+	new -> next = temp;
+	*lst = new;
 }
 
 int main() {
 
    // Test ft_lstadd_front
-    t_list *list = NULL;
-    ft_lstadd_front(&list, ft_lstnew("Front"));
-    ft_lstdelone(list, del);
-    displayList(list); // Expected output: "NewFront -> Back -> NULL"
+	t_list *list = NULL;
+	ft_lstadd_front(&list, ft_lstnew("Front"));
+	ft_lstdelone(list, del);
+	displayList(list); // Expected output: "NewFront -> Back -> NULL"
 
-    ft_lstadd_front(&list, ft_lstnew("NewFront"));
-    ft_lstdelone(list, del);
+	ft_lstadd_front(&list, ft_lstnew("NewFront"));
+	ft_lstdelone(list, del);
    
-    displayList(list); // Expected output: "NewFront -> Back -> NULL"
+	displayList(list); // Expected output: "NewFront -> Back -> NULL"
 
 
 	return 0;

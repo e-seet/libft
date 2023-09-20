@@ -29,16 +29,14 @@ typedef struct s_list
 
 #include "../libft.h"
 // setting new as the head of the linked list
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	temp = *lst;
-    new -> next = temp;
-    *lst = new;
+	new -> next = temp;
+	*lst = new;
 }
-
-
 
 /*#include <stdlib.h>
 #include <stdio.h>
@@ -57,20 +55,20 @@ t_list *ft_lstnew(void *content)
 
 // Function to display the content of a linked list
 void displayList(t_list *lst) {
-    t_list *current = lst;
-    while (current != NULL) {
-        printf("node->%s\n", (char *)current->content);
-        current = current->next;
-    }
+	t_list *current = lst;
+	while (current != NULL) {
+		printf("node->%s\n", (char *)current->content);
+		current = current->next;
+	}
 }
 int main()
 {
-    // Test ft_lstadd_front
-    t_list *list = NULL;
-    ft_lstadd_front(&list, ft_lstnew("Front"));
-    ft_lstadd_front(&list, ft_lstnew("NewFront"));
-    printf("ft_lstadd_front Test:\n");
-    displayList(list); // Expected output: "NewFront -> Front -> NULL"
+	// Test ft_lstadd_front
+	t_list *list = NULL;
+	ft_lstadd_front(&list, ft_lstnew("Front"));
+	ft_lstadd_front(&list, ft_lstnew("NewFront"));
+	printf("ft_lstadd_front Test:\n");
+	displayList(list); // Expected output: "NewFront -> Front -> NULL"
 
 	return 0;
 }*/

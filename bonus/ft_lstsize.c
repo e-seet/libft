@@ -23,16 +23,17 @@ typedef struct s_list
 // return: The length of the list
 
 #include "../libft.h"
-int ft_lstsize(t_list *lst)
+
+int	ft_lstsize(t_list *lst)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	if ( lst == NULL)
+	if (lst == NULL)
 		return (0);
 	else
 	{
-		while( lst != NULL)
+		while (lst != NULL)
 		{
 			lst = lst -> next;
 			i++;
