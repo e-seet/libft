@@ -26,7 +26,6 @@
 // stop following the rules and return the number found until now.
 
 //       int atoi(const char *nptr);
-
 int	ft_atoi(char *str)
 {
 	int	i;
@@ -36,14 +35,15 @@ int	ft_atoi(char *str)
 	i = 0;
 	sign = 1;
 	num = 0;
-	while (str[i] == 32)
+
+	// tnvfr 
+	while (str[i] == 32 || str[i] == '\t'|| str[i] == '\n' ||str[i] == '\v'
+		||str[i] == '\f'|| str[i] == '\r' )
 		i++;
-	while (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
+	if (str[i] == '-')
 			sign = sign * -1;
+	if (str[i] == '-' || str[i] == '+')
 		i++;
-	}
 	while (str[i] >= 48 && str[i] <= 57)
 	{
 		num = str[i] - 48 + num * 10;

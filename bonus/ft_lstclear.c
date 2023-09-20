@@ -10,7 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*#include <stdlib.h>
+#include <stdio.h>
+typedef struct s_list
+{
+	void *content;
+	struct s_list *next;
+} t_list;*/
 
 // parameter
 // lst: The address of a pointer to a node.
@@ -23,25 +29,78 @@
 // and free(3).
 // Finally, the pointer to the list must be set to
 // NULL.
+
+#include "../libft.h"
+void del(void *content)
+{
+	free(content);
+}
 void ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list *prev;
 	t_list *curr;
+	t_list *head;
 
+	head = *lst;
 	curr = *lst;
-	if (curr == NULL)
-		return (NULL);
+	if (!head || !del)
+		return ;
 	else
 	{
 		while (curr -> next != NULL)
 		{
 			prev = curr;
 			curr = curr -> next;
-			del(prev -> content);
-			free(prev);
+			del(prev);
 		}
-		del(curr -> content);
-		free(curr);
-		*lst = NULL;
+		del(curr);
+		head = curr;
 	}
 }
+
+/*
+#include <stdio.h>
+#include <stdlib.h>
+void ft_lstadd_front(t_list **lst, t_list *new)
+{
+	t_list *temp;
+
+	temp = *lst;
+    new -> next = temp;
+    *lst = new;
+}
+t_list *ft_lstnew(void *content)
+{
+	t_list *node;
+
+	node = (t_list *)malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = (void *) content;
+	node->next = NULL;
+	return (node);
+}
+void displayList(t_list *lst) {
+    t_list *current = lst;
+    while (current != NULL) {
+        printf("node->%s\n", (char *)current->content);
+        current = current->next;
+    }
+}
+int main()
+{
+
+	 // Test ft_lstadd_front
+    t_list *list = NULL;
+    ft_lstadd_front(&list, ft_lstnew("Front"));
+    ft_lstadd_front(&list, ft_lstnew("NewFront"));
+    ft_lstadd_front(&list, ft_lstnew("NewFront3"));
+    displayList(list);
+	printf("lstclear  \n\n");
+    // Test ft_lstclear
+    ft_lstclear(&list, del);
+    printf("ft_lstclear Test: %p\n", list); // Expected output: NULL
+	printf("ft_lstclear Test: %s\n", (char *)list); // Expected output: NULL
+	return 0;
+}
+*/
