@@ -26,7 +26,9 @@
 // stop following the rules and return the number found until now.
 
 //       int atoi(const char *nptr);
-int	ft_atoi(char *str)
+#include "libft.h"
+
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;

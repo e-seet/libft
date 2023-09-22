@@ -9,7 +9,8 @@
 /*   Updated: 2023/09/06 15:56:59 by eseet            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+// #include <stdlib.h>
+#include "libft.h"
 
 //       void *calloc(size_t nmemb, size_t size);
 void	*ft_calloc(size_t nmemb, size_t size)
@@ -20,15 +21,13 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	{
 		return (NULL);
 	}
-	else if (nmemb * size > 2147483647)
-	{
-		return (NULL);
-	}
 	else
 	{
 		ptr = malloc(nmemb * size);
 		if (!ptr)
 			return (NULL);
+		else
+			ft_bzero(ptr, nmemb * size);
 	}
 	return (ptr);
 }

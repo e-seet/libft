@@ -21,7 +21,8 @@
 //return a pointer to the terminator.
 
 // char *strrchr(const char *s, int c);
-#include <stddef.h>
+// #include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

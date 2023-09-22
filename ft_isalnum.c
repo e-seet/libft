@@ -12,6 +12,7 @@
 
 //alphabets and numeric
 //       int isalnum(int c);
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {

@@ -16,6 +16,7 @@
 //if the conversion was not possible.
 
 // int toupper(int c);
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

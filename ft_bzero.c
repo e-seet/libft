@@ -11,14 +11,21 @@
 /* ************************************************************************** */
 
 //       void bzero(void *s, size_t n);
+
+#include "libft.h"
+
+//can use memset to do this
+//eg: ft_memset(s, 0, n);
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
+	unsigned char	*ptr;
 
+	ptr = (unsigned char *) s;
 	i = 0;
 	while (n > i)
 	{
-		s[i] = '\0';
+		ptr[i] = '\0';
 		i++;
 	}
 }

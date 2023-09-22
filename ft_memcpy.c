@@ -20,7 +20,8 @@
 //        The memcpy() function returns a pointer to dest.
 
 // void *memcpy(void *dest, const void *src, size_t n);
-#include <stddef.h>
+// #include <stddef.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

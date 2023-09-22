@@ -47,21 +47,22 @@
 // potential security problems in incorrect code.
 
 // strlcpy(char *dst, const char *src, size_t size);
-#include <stddef.h>
+// #include <stddef.h>
 
-size_t	ft_strlen(const char *s)
-{
-	int		i;
-	char	*str;
+// size_t	ft_strlen(const char *s)
+// {
+// 	int		i;
+// 	char	*str;
 
-	i = 0;
-	str = (char *) s;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+// 	i = 0;
+// 	str = (char *) s;
+// 	while (str[i] != '\0')
+// 	{
+// 		i++;
+// 	}
+// 	return (i);
+// }
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

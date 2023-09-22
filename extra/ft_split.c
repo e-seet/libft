@@ -16,7 +16,8 @@
 // The array of new strings resulting from the split.
 // NULL if the allocation fails.
 
-#include "stdlib.h"
+// #include "stdlib.h"
+#include "../libft.h"
 
 // size_t	ft_strlen(const char *s)
 // {

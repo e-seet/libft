@@ -12,6 +12,7 @@
 
 // These functions convert lowercase letters to uppercase, and vice versa.
 // int tolower(int c);
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

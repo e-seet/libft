@@ -26,21 +26,22 @@
 // from the string ’s’.
 // The substring begins at index ’start’ and is of
 // maximum size ’len’.
-#include <stdio.h>
+// #include <stdio.h>
 
-size_t	ft_strlen(const char *s)
-{
-	int		i;
-	char	*str;
+// size_t	ft_strlen(const char *s)
+// {
+// 	int		i;
+// 	char	*str;
 
-	i = 0;
-	str = (char *) s;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+// 	i = 0;
+// 	str = (char *) s;
+// 	while (str[i] != '\0')
+// 	{
+// 		i++;
+// 	}
+// 	return (i);
+// }
+#include "../libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

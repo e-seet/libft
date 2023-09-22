@@ -43,7 +43,8 @@
 //    ptr = strnstr(largestring, smallstring, 4);
 
 // char * strnstr(const char *haystack, const char *needle, size_t len);
-#include <stddef.h>
+// #include <stddef.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

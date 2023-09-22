@@ -10,13 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdio.h"
+// #include "stdio.h"
 //parameter
 // n: the integer to convert
 
 //return
 // The string representing the integer.
 // NULL if the allocation fails
+#include "../libft.h"
+
 char	*reverse(char *str, int i)
 {
 	int		j;

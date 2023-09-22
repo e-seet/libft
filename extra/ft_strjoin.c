@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stddef.h>
+// #include <stdio.h>
+// #include <stddef.h>
 //required
-#include <stdlib.h>
+// #include <stdlib.h>
 
 //parameter
 // s1: The prefix string.
@@ -22,6 +22,7 @@
 //return
 // The new string.
 // NULL if the allocation fails.
+#include "../libft.h"
 
 size_t	ft_strlen(const char *s)
 {

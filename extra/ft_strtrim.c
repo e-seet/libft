@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdio.h"
-#include "stdlib.h"
+// #include "stdio.h"
+// #include "stdlib.h"
 // parameter
 // s1: The string to be trimmed.
 // set: The reference set of characters to trim.
@@ -19,17 +19,18 @@
 // return
 // The trimmed string.
 // NULL if the allocation fails.
-size_t	ft_strlen(const char *s)
-{
-	int		i;
-	char	*str;
+// size_t	ft_strlen(const char *s)
+// {
+// 	int		i;
+// 	char	*str;
 
-	i = 0;
-	str = (char *) s;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+// 	i = 0;
+// 	str = (char *) s;
+// 	while (str[i] != '\0')
+// 		i++;
+// 	return (i);
+// }
+#include "../libft.h"
 
 int	iftrim(char const *str, char const *set)
 {

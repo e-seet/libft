@@ -13,55 +13,56 @@
 // n: The integer to output.
 // fd: The file descriptor on which to write.
 
-#include <stdlib.h>
-#include <unistd.h> // for write function
+// #include <stdlib.h>
+// #include <unistd.h> // for write function
 
 //previous code
-char	*reverse(char *str, int i)
-{
-	int		j;
-	char	temp;
+// char	*reverse(char *str, int i)
+// {
+// 	int		j;
+// 	char	temp;
 
-	j = 0;
-	if (str[0] == '-')
-		j = 1;
-	while (i > j)
-	{
-		temp = str[i];
-		str[i] = str[j];
-		str[j] = temp;
-		i--;
-		j++;
-	}
-	return (str);
-}
+// 	j = 0;
+// 	if (str[0] == '-')
+// 		j = 1;
+// 	while (i > j)
+// 	{
+// 		temp = str[i];
+// 		str[i] = str[j];
+// 		str[j] = temp;
+// 		i--;
+// 		j++;
+// 	}
+// 	return (str);
+// }
 
-char	*ft_itoa(int n)
-{
-	char		*str;
-	int			i;
-	long int	n2;
+// char	*ft_itoa(int n)
+// {
+// 	char		*str;
+// 	int			i;
+// 	long int	n2;
 
-	str = malloc(sizeof(char) * 20);
-	n2 = n;
-	i = 0;
-	if (0 > n2)
-	{
-		str[i] = '-';
-		n2 = n2 * -1;
-		i = 1;
-	}
-	while (n2 > 9)
-	{
-		str[i] = n2 % 10 + '0';
-		n2 = n2 / 10;
-		i++;
-	}
-	str[i] = n2 + '0';
-	str[i + 1] = '\0';
-	return (reverse(str, i));
-}
+// 	str = malloc(sizeof(char) * 20);
+// 	n2 = n;
+// 	i = 0;
+// 	if (0 > n2)
+// 	{
+// 		str[i] = '-';
+// 		n2 = n2 * -1;
+// 		i = 1;
+// 	}
+// 	while (n2 > 9)
+// 	{
+// 		str[i] = n2 % 10 + '0';
+// 		n2 = n2 / 10;
+// 		i++;
+// 	}
+// 	str[i] = n2 + '0';
+// 	str[i + 1] = '\0';
+// 	return (reverse(str, i));
+// }
 //end of previous code
+#include "../libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

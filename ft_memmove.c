@@ -17,7 +17,8 @@
 // overlap src or dest, and the bytes are then  copied  from
 // the temporary array to dest.
 // The memmove() function returns a pointer to dest.
-#include <stddef.h>
+// #include <stddef.h>
+#include "libft.h"
 
 // void *memmove(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n)

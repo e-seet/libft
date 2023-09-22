@@ -23,7 +23,8 @@
 // preted as unsigned char) that differ in s1 and s2.
 
 // If n is zero, the return value is zero.
-#include <stddef.h>
+// #include <stddef.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -33,6 +34,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	ptr = s1;
 	ptr2 = s2;
+	i = 0;
 	while (n >= i)
 	{
 		if (ptr[i] == ptr2[i])
