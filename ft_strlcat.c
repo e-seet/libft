@@ -77,20 +77,26 @@ unsigned int    ft_strlcat(char *dest, char *src, unsigned int size)
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
+	size_t	dst_len;
+	size_t	src_len;
 	size_t	i;
-	size_t	j;
 
 	i = 0;
-	j = 0;
-	while (dst[j] != '\0')
-		j++;
-	while (*src != '\0' && size > i)
+	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
+	if (!size)
+		return (src_len);
+	if (size > dst_len)
+		src_len = dst_len + src_len;
+	else
+		src_len = src_len + size;
+	while (src[i] != '\0' && size -1 > dst_len + i)
 	{
-		dst[j + i] = src[i];
+		dst[dst_len + i] = src[i];
 		i++;
 	}
-	dst[j + i] = '\0';
-	return (j + i);
+	dst[dst_len + i] = 0;
+	return (src_len);
 }
 /*
 #include <stdio.h>

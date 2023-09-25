@@ -44,6 +44,8 @@
 
 // char * strnstr(const char *haystack, const char *needle, size_t len);
 // #include <stddef.h>
+// #include <stdio.h>
+
 #include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
@@ -56,15 +58,19 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	str = (char *) haystack;
 	find = (char *) needle;
 	i = 0;
-	while (str[i] != '\0' && len > i)
+	if (!*find)
+		return ((char *)str);
+	while (str[i] && len > i)
 	{
 		j = 0;
 		if (str[i] == needle[j])
 		{
-			while (str[i + j] != '\0' && find[j] != '\0' && len > i + j)
+			while (str[i + j] == find[j] && len > i + j)
+			{
 				j++;
-			if (find[j] == '\0')
-				return (&str[i]);
+				if (find[j] == '\0')
+					return (str + i);
+			}
 		}
 		i++;
 	}
@@ -75,62 +81,74 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 #include <string.h>
 
 int main() {
-	// Test case 1: Search for a substring present 
-	//in the string within the specified length
-	const char *haystack1 = "Hello, World!";
-	const char *needle1 = "World";
-	size_t max_length1 = 12; 
-	 // Limit the search to the first 12 characters
-	char *result1 = strnstr(haystack1, needle1, max_length1);
+	// // Test case 1: Search for a substring present 
+	// //in the string within the specified length
+	// const char *haystack1 = "Hello, World!";
+	// const char *needle1 = "World";
+	// size_t max_length1 = 12; 
+	//  // Limit the search to the first 12 characters
+	// char *result1 = strnstr(haystack1, needle1, max_length1);
 
-	if (result1 != NULL) {
-		printf("Test case 1 passed. Found substring: %s\n", result1);
-	} else {
-		printf("Test case 1 failed. Substring not found.\n");
-	}
+	// if (result1 != NULL) {
+	// 	printf("Test case 1 passed. Found substring: %s\n", result1);
+	// } else {
+	// 	printf("Test case 1 failed. Substring not found.\n");
+	// }
 
-	// Test case 2: Search for a substring present
-	// in the string within the specified length
-	// Test case fail.
-	const char *haystack2 = "Hello, World!";
-	const char *needle2 = "World";
-	size_t max_length2 = 10;  
-	// Limit the search to the first 10 characters
-	char *result2 = strnstr(haystack2, needle2, max_length2);
+	// // Test case 2: Search for a substring present
+	// // in the string within the specified length
+	// // Test case fail.
+	// const char *haystack2 = "Hello, World!";
+	// const char *needle2 = "World";
+	// size_t max_length2 = 10;  
+	// // Limit the search to the first 10 characters
+	// char *result2 = strnstr(haystack2, needle2, max_length2);
 
-	if (result2 != NULL) {
-		printf("Test case 2 passed. Found substring: %s\n", result2);
-	} else {
-		printf("Test case 2 failed. Substring not found.\n");
-	}
+	// if (result2 != NULL) {
+	// 	printf("Test case 2 passed. Found substring: %s\n", result2);
+	// } else {
+	// 	printf("Test case 2 failed. Substring not found.\n");
+	// }
 
-	// Test case 3: Search for a substring not 
-	//present in the string within the specified length
-	// fail as it does not exist
-	const char *haystack3 = "This is a test.";
-	const char *needle3 = "foobar";
-	size_t max_length3 = 15;  
-	// Limit the search to the first 15 characters
-	char *result3 = strnstr(haystack3, needle3, max_length3);
+	// // Test case 3: Search for a substring not 
+	// //present in the string within the specified length
+	// // fail as it does not exist
+	// const char *haystack3 = "This is a test.";
+	// const char *needle3 = "foobar";
+	// size_t max_length3 = 15;  
+	// // Limit the search to the first 15 characters
+	// char *result3 = strnstr(haystack3, needle3, max_length3);
 
-	if (result3 == NULL) {
-		printf("Test case 3 passed. Substring not found.\n");
-	} else {
-		printf("Test case3  failed. Found unexpected substring: %s\n", result2);
-	}
+	// if (result3 == NULL) {
+	// 	printf("Test case 3 passed. Substring not found.\n");
+	// } else {
+	// 	printf("Test case3  failed. Found unexpected substring: %s\n", result2);
+	// }
 
-	// Test case 4:
-	const char *haystack4 = "Hello, World!";
-	const char *needle4 = "ell";
-	size_t max_length4 = 10; 
-	 // Limit the search to the first 12 characters
-	char *result4 = strnstr(haystack4, needle4, max_length4);
+	// // Test case 4:
+	// const char *haystack4 = "Hello, World!";
+	// const char *needle4 = "ell";
+	// size_t max_length4 = 10; 
+	//  // Limit the search to the first 12 characters
+	// char *result4 = strnstr(haystack4, needle4, max_length4);
 
-	if (result4 != NULL) {
-		printf("Test case 4 passed. Found substring: %s\n", result4);
-	} else {
-		printf("Test case 4 failed. Substring not found.\n");
-	}
+	// if (result4 != NULL) {
+	// 	printf("Test case 4 passed. Found substring: %s\n", result4);
+	// } else {
+	// 	printf("Test case 4 failed. Substring not found.\n");
+	// }
+
+	char *str;
+	if (!(str = ft_strnstr("lorem ipsum dolor sit amet", "ipsumm", 30)))
+		printf("NULL\n");
+    else
+		printf("%s\n", str);
+
+	char haystack[30] = "aaabcabcd";
+	char needle[10] = "aabc";
+	printf( "resykt %s\n", ft_strnstr(haystack, needle, -1)); //haystack + 1)
+	printf("result %s\n", ft_strnstr(haystack, "abcd", 9)); // haystack + 5
+	printf( "result %s\n",  ft_strnstr(haystack, "cd", 8)) ; //NULL
 
 	return 0;
 }

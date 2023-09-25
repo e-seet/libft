@@ -35,7 +35,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	ptr = s1;
 	ptr2 = s2;
 	i = 0;
-	while (n >= i)
+	while (n > i)
 	{
 		if (ptr[i] == ptr2[i])
 		{

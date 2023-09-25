@@ -64,22 +64,21 @@
 // }
 #include "libft.h"
 
+// essentially
+// 1. make a copy 
+// 2. return length of src
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t	i;
 	size_t	len;
-	char	*str;
 
-	i = 0;
-	str = (char *) src;
 	len = ft_strlen(src);
-	while (src[i] != '\0' && len && size -1)
-	{
-		dst[i] = str[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (len);
+	if (!size)
+		return (len);
+	if (len >= size)
+		len = size - 1;
+	ft_memcpy(dst, src, len);
+	dst[len] = '\0';
+	return (ft_strlen(src));
 }
 
 /*#include <stdio.h>

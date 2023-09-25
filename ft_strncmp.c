@@ -31,6 +31,8 @@
 
 // int strncmp(const char *s1, const char *s2, size_t n);
 // #include <stddef.h>
+// #include <stdio.h>
+
 #include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -42,12 +44,15 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	str1 = (char *)s1;
 	str2 = (char *)s2;
 	i = 0;
-	while (n > i)
+	if (!n)
+		return (0);
+	while (n > i && (str1[i] || str2[i]))
 	{
 		if (str1[i] == str2[i])
 			i++;
 		else
-			return (str1[i] - str2[i]);
+			return ((*(unsigned char *)(str1 + i)
+				- *(unsigned char *)(str2 + i)));
 	}
 	return (0);
 }
@@ -62,42 +67,47 @@ void testStringComparison(const char *str1, const char *str2, int n) {
         printf("Both strings are equal up to %d characters.\n", n);
     } else if (result < 0) {
         printf("str1 is less than str2 up to %d characters.\n", n);
+		printf("result is %d\n", result);
     } else {
         printf("str1 is greater than str2 up to %d characters.\n", n);
+		printf("result is %d\n", result);
     }
 }
 
 int main() {
-    // Test case 1: Equality: Expected S1 > S2
-    char str1_1[] = "Hello, World!";
-    char str2_1[] = "Hello, Earth!";
-    int n_1 = 13;  // Compare the entire strings
-    testStringComparison(str1_1, str2_1, n_1);
+    // // Test case 1: Equality: Expected S1 > S2
+    // char str1_1[] = "Hello, World!";
+    // char str2_1[] = "Hello, Earth!";
+    // int n_1 = 13;  // Compare the entire strings
+    // testStringComparison(str1_1, str2_1, n_1);
 
-    // Test case 2: Partial equality: [Equal]
-    char str1_2[] = "apple pie";
-    char str2_2[] = "apple juice";
-    int n_2 = 5;  // Compare the first 5 characters
-    testStringComparison(str1_2, str2_2, n_2);
+    // // Test case 2: Partial equality: [Equal]
+    // char str1_2[] = "apple pie";
+    // char str2_2[] = "apple juice";
+    // int n_2 = 5;  // Compare the first 5 characters
+    // testStringComparison(str1_2, str2_2, n_2);
 
-    // Test Case 3: [equal]
-    char str1_3[] = "programming";
-    char str2_3[] = "program";
-    int n_3 = 7;  // Compare the first 7 characters
-    testStringComparison(str1_3, str2_3, n_3);
+    // // Test Case 3: [equal]
+    // char str1_3[] = "programming";
+    // char str2_3[] = "program";
+    // int n_3 = 7;  // Compare the first 7 characters
+    // testStringComparison(str1_3, str2_3, n_3);
 
-    // Test case 4: [s1> s2]
-    char str1_4[] = "programming";
-    char str2_4[] = "program";
-    int n_4 = 10;  // Compare the first 10 characters
-    testStringComparison(str1_4, str2_4, n_4);
+    // // Test case 4: [s1> s2]
+    // char str1_4[] = "programming";
+    // char str2_4[] = "program";
+    // int n_4 = 10;  // Compare the first 10 characters
+    // testStringComparison(str1_4, str2_4, n_4);
 
-    // Test case 5: Opposite of test case 4 [s2>s1]
-    char str1_5[] = "program";
-    char str2_5[] = "programming";
-    int n_5 = 10;  // Compare the first 10 characters
-    testStringComparison(str1_5, str2_5, n_5);
+    // // Test case 5: Opposite of test case 4 [s2>s1]
+    // char str1_5[] = "program";
+    // char str2_5[] = "programming";
+    // int n_5 = 10;  // Compare the first 10 characters
+    // testStringComparison(str1_5, str2_5, n_5);
 
+	//extra tesst
+	testStringComparison("test\200", "test\0", 6); //expected 1
+	// testStringComparison("","",2); //
     return 0;
 }
 */

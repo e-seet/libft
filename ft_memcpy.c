@@ -37,7 +37,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		destptr[i] = srcptr[i];
 		i++;
 	}
-	return ((void *)srcptr);
+	return ((void *)destptr);
 }
 
 /*#include "stdio.h"

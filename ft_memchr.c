@@ -24,20 +24,18 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char	*ptr;
+	unsigned char		*ptr;
 	size_t				i;
 
-	ptr = s;
+	ptr = (unsigned char *) s;
 	i = 0;
 	while (n > i)
 	{
-		if (ptr[i] == c)
-		{
+		if (ptr[i] == (unsigned char) c)
 			return ((void *)(ptr + i));
-		}
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
 /*
 #include <stdio.h> 
