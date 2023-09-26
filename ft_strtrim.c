@@ -10,19 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdio.h"
-// #include "stdlib.h"
-// size_t	ft_strlen(const char *s)
-// {
-// 	int		i;
-// 	char	*str;
-
-// 	i = 0;
-// 	str = (char *) s;
-// 	while (str[i] != '\0')
-// 		i++;
-// 	return (i);
-// }
 // parameter
 // s1: The string to be trimmed.
 // set: The reference set of characters to trim.
@@ -30,49 +17,49 @@
 // return
 // The trimmed string.
 // NULL if the allocation fails.
+
+//basically anything that is in set, remove it from s1
+// remove the from front and back only
 #include "libft.h"
 
-int	iftrim(char const *str, char const *set)
+int	is_set(char c, char const *set)
 {
-	int	j;
+	int	i;
 
-	j = 0;
-	while (set[j] && set[j] == str[j])
+	i = 0;
+	while (set[i])
 	{
-		j++;
-		if (set[j] == '\0')
-			return (j);
+		if (c == set[i++])
+			return (1);
 	}
 	return (0);
 }
 
+// using memory address to subtract start and end
+// for malloc, there is a need to allocate + 2
+// reason:
+// 1. Start character needs a char. That is to be acc.
+// 2. null terminator to end the array of char
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
+	char	*start;
+	char	*end;
 	char	*finalstr;
-	int		i;
 
-	i = 0;
 	if (!s1 || !set)
 		return (0);
-	
-	str = (char *) s1;
-	finalstr = (char *) malloc(sizeof(char) * (ft_strlen(str) + 1));
-	while (*str != '\0')
-	{
-		if (*str == *set && iftrim(str, set) > 0)
-		{
-			str = str + iftrim(str, set);
-		}
-		else
-		{
-			finalstr[i] = *str;
-			i++;
-			str++;
-		}
-	}
-	finalstr[i + 1] = '\0';
-	return ((char *) finalstr);
+	start = (char *) s1;
+	while (*start && is_set(*start, set))
+		start++;
+	end = (char *) s1 + ft_strlen(s1) - 1;
+	while (end > start && is_set(*end, set))
+		end--;
+	finalstr = malloc(end - start + 2);
+	if (!finalstr)
+		return (0);
+	ft_strlcpy(finalstr, start, end - start +2);
+	finalstr[end - start + 1] = '\0';
+	return (finalstr);
 }
 
 /*

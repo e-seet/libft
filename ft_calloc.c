@@ -13,22 +13,18 @@
 #include "libft.h"
 
 //       void *calloc(size_t nmemb, size_t size);
+// don't need to check parameters
+// malloc function in C, as defined by the C standard,
+// will return a null pointer (NULL) if it fails to allocate memory
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if (nmemb == 0 || size == 0)
-	{
+	ptr = malloc(nmemb * size);
+	if (!ptr)
 		return (NULL);
-	}
 	else
-	{
-		ptr = malloc(nmemb * size);
-		if (!ptr)
-			return (NULL);
-		else
-			ft_bzero(ptr, nmemb * size);
-	}
+		ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }
 /*
@@ -50,7 +46,7 @@ int main() {
 	}
 	for (size_t i = 0; i < num_elements; i++) { 
 		assert(arr[i] == 0); 
-	} 
+	}
 
 	// Test case 2: Allocate an array of characters 
 and verify the contents are initialized to zero. 

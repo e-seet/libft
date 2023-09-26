@@ -23,22 +23,17 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*str;
-
-	str = (char *) s;
-	while (*str != '\0')
+	while (*s != '\0')
 	{
-		if (*str == (char) c)
-		{
-			return (str);
-		}
+		if (*s == (char) c)
+			return ((char *)s);
 		else
-		{
-			str++;
-		}
+			s++;
 	}
-	if (*str == c)
-		return (str);
+	if (*s == (char)c)
+	{
+		return ((char *) s);
+	}
 	else
 		return (NULL);
 }

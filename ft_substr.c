@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stddef.h>
-// #include <stdlib.h>
-// paramtere
+// parameter
 // s:  The string from which to create the substring.
 // start:  The start index of the substring in the
 // string ’s’.
@@ -28,39 +26,22 @@
 // maximum size ’len’.
 // #include <stdio.h>
 
-// size_t	ft_strlen(const char *s)
-// {
-// 	int		i;
-// 	char	*str;
-
-// 	i = 0;
-// 	str = (char *) s;
-// 	while (str[i] != '\0')
-// 	{
-// 		i++;
-// 	}
-// 	return (i);
-// }
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*substring;
-	char			*string;
-	unsigned int	i;
+	char	*substring;
+	size_t	i;
 
 	i = 0;
-	string = (char *) s;
-	if (string == NULL)
-		return (NULL);
-	if (ft_strlen(string) < start)
-	{
-		substring = (char *) malloc(sizeof(char) * 1);
-		substring[0] = '\0';
-		return (substring);
-	}
-	substring = (char *) malloc(sizeof(char) * (ft_strlen(&s[start]) + 1));
-	if (substring == NULL)
+	if (!s)
+		return (0);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	if (len >= ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	substring = (char *) malloc(sizeof(char) * (len + 1));
+	if (!substring)
 		return (NULL);
 	while (s[i + start] != '\0' && i < len)
 	{

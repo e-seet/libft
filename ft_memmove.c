@@ -20,34 +20,44 @@
 // #include <stddef.h>
 #include "libft.h"
 
+void	*copyfromback(unsigned char *destptr, unsigned char *srcptr, size_t n)
+{
+	while (n)
+	{
+		destptr[n - 1] = srcptr[n - 1];
+		n--;
+	}
+	return (destptr);
+}
+
+void	*copyfromfront(unsigned char *destptr, unsigned char *srcptr, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (n > i)
+	{
+		destptr[i] = srcptr[i];
+		i++;
+	}
+	return (destptr);
+}
+
 // void *memmove(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*srcptr;
 	unsigned char	*destptr;
-	size_t			i;
 
-	i = 0;
+	if (!dest && !src)
+		return (dest);
 	srcptr = (unsigned char *) src;
 	destptr = (unsigned char *) dest;
 	if (dest > src)
-	{
-		while (n)
-		{
-			destptr[n - 1] = srcptr[n - 1];
-			n--;
-		}
-		return (dest);
-	}
+		copyfromback(destptr, srcptr, n);
 	else
-	{
-		while (n > i)
-		{
-			destptr[i] = srcptr[i];
-			i++;
-		}
-		return (dest);
-	}
+		copyfromfront(destptr, srcptr, n);
+	return (dest);
 }
 
 /*#include <stdio.h>

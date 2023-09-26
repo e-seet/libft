@@ -101,31 +101,36 @@ void ft_lstclear(t_list **lst, void (*del)(void *))
 // 3.The ’del’ function is used to delete the content
 // of a node if needed. [basically if there is a error]
 
+//So basically
+// 1. Get the content (after function)
+// 2. create new node
+// 3. check if node created successfully
+// 3.1 if not, delete the node and content
+// 4. if yes, add the node to the list
 #include "../libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*newlist;
-	t_list	*node;
+	t_list	*newnode;
+	t_list	*list;	
+	void	*content;
 
-	newlist = NULL;
-	if (f == NULL || lst == NULL)
-		return (NULL);
-	while (lst->next != NULL)
+	if (!f || !lst || !del)
+		return (0);
+	list = 0;
+	while (lst)
 	{
-		node = ft_lstnew(lst -> content);
-		if (!node)
+		content = f(lst -> content);
+		newnode = ft_lstnew(content);
+		if (!newnode)
 		{
-			ft_lstclear(&newlist, del);
-			break ;
+			ft_lstclear(&newnode, del);
+			del(content);
 		}
-		else
-		{
-			ft_lstadd_back(&newlist, node);
-			lst = lst -> next;
-		}
+		ft_lstadd_back(&list, newnode);
+		lst = lst -> next;
 	}
-	return (newlist);
+	return (list);
 }
 
 /*

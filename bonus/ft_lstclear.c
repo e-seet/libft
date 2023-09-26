@@ -24,7 +24,7 @@ void	del(void *content)
 */
 
 // parameter
-// lst: The address of a pointer to a node.
+// lst: head node
 // del: The address of the function used to delete
 // the content of the node.
 
@@ -39,24 +39,18 @@ void	del(void *content)
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*prev;
-	t_list	*curr;
-	t_list	*head;
+	t_list	*nextnode;
 
-	head = *lst;
-	curr = *lst;
-	if (!head || !del)
+	if (!lst || !del)
 		return ;
 	else
 	{
-		while (curr -> next != NULL)
+		while (*lst)
 		{
-			prev = curr;
-			curr = curr -> next;
-			del(prev);
+			nextnode = (*lst)->next;
+			ft_lstdelone(*lst, del);
+			*lst = nextnode;
 		}
-		del(curr);
-		head = curr;
 	}
 }
 
