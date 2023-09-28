@@ -25,7 +25,6 @@ int	ft_toupper(int c)
 	return (c);
 }
 
-
 // int main() {
 //     // Test Case 1: Convert a lowercase letter to uppercase
 //     char lowercaseChar = 'a';
