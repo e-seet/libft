@@ -18,7 +18,6 @@
 //or NULL if the character is not found.  The  terminating
 // null byte is considered part of the string, so that 
 //if c is specified as '\0', these functions return a pointer to the terminator.
-// #include <stddef.h>
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
@@ -38,8 +37,6 @@ char	*ft_strchr(const char *s, int c)
 		return (NULL);
 }
 /*
-#include <stdio.h>
-#include <string.h>
 
 int main() {
     char str[] = "Hello, World!";

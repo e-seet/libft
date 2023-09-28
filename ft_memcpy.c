@@ -20,7 +20,6 @@
 //        The memcpy() function returns a pointer to dest.
 
 // void *memcpy(void *dest, const void *src, size_t n);
-// #include <stddef.h>
 #include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
@@ -42,10 +41,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return ((void *)destptr);
 }
 
-/*#include "stdio.h"
-#include "string.h"
-#include "assert.h"
-
+/*
 int main() { 
 	// Test Case 1: Test copying a string 
 	char source[] = "Hello, World!"; 

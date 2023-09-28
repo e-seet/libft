@@ -10,18 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <stdlib.h>
-typedef struct s_list
-{
-	void *content;
-	struct s_list *next;
-} t_list;
-void del(void *content)
-{
-	free(content);
-}*/
-
 //parameter
 // lst: The node to free.
 // del: The address of the function used to delete
@@ -33,7 +21,7 @@ void del(void *content)
 // as a parameter and free the node. The memory of
 // ’next’ must not be freed.
 
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
@@ -44,7 +32,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 }
 
 /*
-#include <stdio.h>
 // Function to display the content of a linked list
 void displayList(t_list *lst) {
 	t_list *current = lst;

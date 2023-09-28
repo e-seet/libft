@@ -33,9 +33,6 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
-// #include <stdio.h>
-// #include <string.h>
-
 // int main() {
 //     char buffer[20];
 

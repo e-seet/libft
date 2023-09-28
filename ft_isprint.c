@@ -26,9 +26,6 @@ int	ft_isprint(int c)
 }
 
 /*
-#include <stdio.h> 
-#include <ctype.h> 
-#include <assert.h> 
 
 int main() { 
 	// Test case 1: Printable characters 

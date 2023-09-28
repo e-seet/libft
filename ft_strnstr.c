@@ -43,8 +43,6 @@
 //    ptr = strnstr(largestring, smallstring, 4);
 
 // char * strnstr(const char *haystack, const char *needle, size_t len);
-// #include <stddef.h>
-// #include <stdio.h>
 
 #include "libft.h"
 
@@ -77,9 +75,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (NULL);
 }
 /*
-#include <stdio.h>
-#include <string.h>
-
 int main() {
 	// // Test case 1: Search for a substring present 
 	// //in the string within the specified length

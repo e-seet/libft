@@ -53,10 +53,6 @@ int	ft_atoi(const char *str)
 }
 
 /*
-#include <stdio.h>
-#include <stdlib.h>
-#include <assert.h>
-#include <limits.h>
 */
 // int	main()
 // { 

@@ -16,8 +16,6 @@
 // The array of new strings resulting from the split.
 // NULL if the allocation fails.
 
-// #include "stdlib.h"
-#include "stdio.h"
 #include "libft.h"
 
 int	numofwords(const char *s, char c)

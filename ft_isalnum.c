@@ -28,9 +28,6 @@ int	ft_isalnum(int c)
 	}
 }
 /*
-#include <stdio.h> 
-#include <ctype.h> 
-#include <assert.h> 
 
 int main() { 
     // Test case 1: Alphanumeric characters (letters and digits) 

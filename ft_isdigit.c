@@ -26,10 +26,6 @@ int	ft_isdigit(int c)
 }
 
 /*
-#include <stdio.h> 
-#include <ctype.h> 
-#include <assert.h> 
-
 int main() { 
 
     // Test case 1: Digits 

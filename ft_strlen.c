@@ -9,7 +9,7 @@
 /*   Updated: 2023/09/07 19:48:38 by eseet            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-// #include <stddef.h>
+
 #include "libft.h"
 
 size_t	ft_strlen(const char *s)
@@ -25,9 +25,6 @@ size_t	ft_strlen(const char *s)
 	}
 	return (i);
 }
-
-// #include <stdio.h>
-// #include <string.h>
 
 // int main() {
 //     // Test Case 1: Calculate the length of a non-empty string

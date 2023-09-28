@@ -25,9 +25,7 @@ int	ft_isascii(int c)
 	}
 }
 
-/*#include <stdio.h> 
-#include <stdbool.h> 
-
+/*
 int main() { 
 	int ch1 = 68;    // An ASCII character 
 	int ch2 = 500;    // A non-ASCII character (copyright symbol) 

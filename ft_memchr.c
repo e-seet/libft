@@ -38,9 +38,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (0);
 }
 /*
-#include <stdio.h> 
-#include <string.h> 
-#include <assert.h> 
 
 int main(void){
 

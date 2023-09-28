@@ -25,8 +25,6 @@ int	ft_toupper(int c)
 	return (c);
 }
 
-// #include <stdio.h>
-// #include <ctype.h>
 
 // int main() {
 //     // Test Case 1: Convert a lowercase letter to uppercase

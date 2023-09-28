@@ -15,9 +15,9 @@ OBJS		=	${SRCS:.c=.o}
 
 
 #				Bonus Files
-BONUS_SRCS	=	./bonus/ft_lstnew.c			./bonus/ft_lstadd_front.c	./bonus/ft_lstsize.c		./bonus/ft_lstlast.c \
-				./bonus/ft_lstadd_back.c	./bonus/ft_lstdelone.c		./bonus/ft_lstclear.c		./bonus/ft_lstiter.c	\
-				./bonus/ft_lstmap.c
+BONUS_SRCS	=	ft_lstnew.c			ft_lstadd_front.c	ft_lstsize.c		ft_lstlast.c\
+				ft_lstadd_back.c	ft_lstdelone.c		ft_lstclear.c		ft_lstiter.c\
+				ft_lstmap.c
 
 BONUS_OBJS	=	${BONUS_SRCS:.c=.o}
 

@@ -19,21 +19,7 @@
 // The string created from the successive applications of ’f’.
 // Returns NULL if the allocation fails.
 
-// #include <stdlib.h>
 #include "libft.h"
-// size_t	ft_strlen(const char *s)
-// {
-// 	int		i;
-// 	char	*str;
-
-// 	i = 0;
-// 	str = (char *) s;
-// 	while (str[i] != '\0')
-// 	{
-// 		i++;
-// 	}
-// 	return (i);
-// }
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -56,10 +42,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 }
 
 /*
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 char uppercase_mapper(unsigned int index, char c) {
     // Check if the character is lowercase
     if (c >= 'a' && c <= 'z') {

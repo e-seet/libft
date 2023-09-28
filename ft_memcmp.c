@@ -23,7 +23,6 @@
 // preted as unsigned char) that differ in s1 and s2.
 
 // If n is zero, the return value is zero.
-// #include <stddef.h>
 #include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
@@ -49,8 +48,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 
-/*#include <stdio.h>
-#include <string.h>
+/*
 int main() {
 	// Test 1: Compare two equal strings [0]
 	const char str1[] = "Hello, World!";

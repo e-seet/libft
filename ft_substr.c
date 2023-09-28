@@ -24,7 +24,6 @@
 // from the string ’s’.
 // The substring begins at index ’start’ and is of
 // maximum size ’len’.
-// #include <stdio.h>
 
 #include "libft.h"
 
@@ -52,10 +51,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (substring);
 }
 
-/*#include <stdio.h>
-#include <assert.h>
-#include <string.h>
-
+/*
 // Prototype for the ft_substr function
 // char *ft_substr(char const *s, unsigned int start, size_t len);
 int main() {

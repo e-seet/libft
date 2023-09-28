@@ -21,9 +21,6 @@ int	ft_tolower(int c)
 	return (c);
 }
 
-// #include <stdio.h>
-// #include <ctype.h>
-
 // int main() {
 //     // Test Case 1: Convert an uppercase letter to lowercase
 //     char uppercaseChar = 'A';

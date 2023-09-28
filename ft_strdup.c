@@ -20,23 +20,7 @@
 //  It returns NULL if insufficient  memory  was  available,
 //with errno set to indicate the cause of the error.
 
-// #include <stdio.h>
-// #include <stdlib.h>
 #include "libft.h"
-
-// size_t	ft_strlen(const char *s)
-// {
-// 	int		i;
-// 	char	*str;
-
-// 	i = 0;
-// 	str = (char *) s;
-// 	while (str[i] != '\0')
-// 	{
-// 		i++;
-// 	}
-// 	return (i);
-// }
 
 char	*ft_strdup(const char *s)
 {
@@ -57,10 +41,6 @@ char	*ft_strdup(const char *s)
 	dup[i] = '\0';
 	return (dup);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-// #include <stdlib.h>
 
 // int main() {
 //     const char *original = "Hello, World!";

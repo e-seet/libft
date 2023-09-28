@@ -1,47 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eseet <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 19:13:26 by eseet             #+#    #+#             */
-/*   Updated: 2023/09/14 19:13:27 by eseet            ###   ########.fr       */
+/*   Created: 2023/09/14 19:26:06 by eseet             #+#    #+#             */
+/*   Updated: 2023/09/14 19:26:06 by eseet            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <stddef.h>
-typedef struct s_list
-{
-	void *content;
-	struct s_list *next;
-} t_list;*/
+// parameter
+// lst: The address of a pointer to a node.
+// f: The address of the function used to iterate on
+// the list.
 
-// parameter: lst: The beginning of the list
-// return the last node
-#include "../libft.h"
+// description
+// Iterates the list ’lst’ and applies the function
+// ’f’ on the content of each node.
 
-t_list	*ft_lstlast(t_list *lst)
+#include "libft.h"
+
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*curr;
 
+	if (!lst || !f)
+		return ;
 	curr = lst;
-	if (curr == NULL)
-		return (NULL);
-	else
+	while (curr -> next != NULL)
 	{
-		while (curr -> next != NULL)
-		{
-			curr = curr -> next;
-		}
-		return (curr);
+		f(curr -> content);
+		curr = curr -> next;
 	}
+	f(curr -> content);
 }
 
 /*
-#include <stdio.h>
-#include <stdlib.h>
 void ft_lstadd_front(t_list **lst, t_list *new)
 {
 	t_list *temp;
@@ -49,6 +44,15 @@ void ft_lstadd_front(t_list **lst, t_list *new)
 	temp = *lst;
     new -> next = temp;
     *lst = new;
+}
+
+// Test ft_lstmap
+void *map(void *content) {
+	return strdup((char *)content);
+}
+void del(void *content)
+{
+	free(content);
 }
 t_list *ft_lstnew(void *content)
 {
@@ -64,27 +68,21 @@ t_list *ft_lstnew(void *content)
 void displayList(t_list *lst) {
     t_list *current = lst;
     while (current != NULL) {
-        printf("node->%s\n", 
-		(char *)current->content);
+        printf("node-> %s \n", (char *)current->content);
         current = current->next;
     }
 }
+
 int main()
 {
-	 //test case 1:
-    // t_list *list = NULL;
+    t_list *list = NULL;
 
-	//test case 2
- 	t_list *list = NULL;
     ft_lstadd_front(&list, ft_lstnew("Front"));
-    ft_lstadd_front(&list, ft_lstnew("NewFront1"));
-    ft_lstadd_front(&list, ft_lstnew("NewFront2"));
-    ft_lstadd_front(&list, ft_lstnew("NewFrontlasts"));
-   
+    ft_lstadd_front(&list, ft_lstnew("NewFront"));
+	ft_lstadd_front(&list, ft_lstnew("NewFront3"));
 	displayList(list);
-    t_list *last = ft_lstlast(list);
-    printf("ft_lstlast Test: %s\n", 
-	(char *)last->content); // Expected output: "Front"
-   
+    ft_lstiter(list, print); // Expected output: "Item1" and "Item2"
+
 	return 0;
-}*/
+}
+*/

@@ -20,22 +20,6 @@
 // if c is specified as '\0', these functions 
 //return a pointer to the terminator.
 
-// char *strrchr(const char *s, int c);
-// #include <stddef.h>
-// #include <stdio.h>
-// size_t	ft_strlen(const char *s)
-// {
-// 	int		i;
-// 	char	*str;
-
-// 	i = 0;
-// 	str = (char *) s;
-// 	while (str[i] != '\0')
-// 	{
-// 		i++;
-// 	}
-// 	return (i);
-// }
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
@@ -53,8 +37,6 @@ char	*ft_strrchr(const char *s, int c)
 }
 
 /*
-#include <stdio.h>
-#include <string.h>
 
 int main() {
     // Test Case 1: Find the last occurrence of 'l' in a string

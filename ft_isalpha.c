@@ -26,10 +26,7 @@ int	ft_isalpha(int c)
 	}
 }
 
-/*#include <stdio.h> 
-#include <ctype.h> 
-#include <assert.h> 
-
+/*
 int main() { 
 	// Test case 1: Alphabetic characters (letters) 
 	assert(ft_isalpha('A') != 0); 

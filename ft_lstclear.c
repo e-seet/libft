@@ -10,19 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdlib.h>
-#include <stdio.h>
-typedef struct s_list
-{
-	void *content;
-	struct s_list *next;
-} t_list;
-void	del(void *content)
-{
-	free(content);
-}
-*/
-
 // parameter
 // lst: head node
 // del: The address of the function used to delete
@@ -35,7 +22,7 @@ void	del(void *content)
 // Finally, the pointer to the list must be set to
 // NULL.
 
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
@@ -55,8 +42,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 }
 
 /*
-#include <stdio.h>
-#include <stdlib.h>
 void ft_lstadd_front(t_list **lst, t_list *new)
 {
 	t_list *temp;

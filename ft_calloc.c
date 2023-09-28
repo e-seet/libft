@@ -9,7 +9,7 @@
 /*   Updated: 2023/09/06 15:56:59 by eseet            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-// #include <stdlib.h>
+
 #include "libft.h"
 
 //       void *calloc(size_t nmemb, size_t size);
@@ -28,10 +28,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return (ptr);
 }
 /*
-#include <stdio.h> 
-#include <ctype.h> 
-#include <assert.h> 
-
 int main() { 
 
 	// Test case 1: Allocate an array of integers

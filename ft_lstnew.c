@@ -10,14 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>
-#include <stdlib.h>
-typedef struct s_list
-{
-	void *content;
-	struct s_list *next;
-} t_list;*/
-
 // Allocates (with malloc(3)) and returns a new node.
 // The member variable ’content’ is initialized with
 // the value of the parameter ’content’. The variable
@@ -29,7 +21,7 @@ typedef struct s_list
 //return 
 // The new node
 
-#include "../libft.h"
+#include "libft.h"
 
 t_list	*ft_lstnew(void *content)
 {

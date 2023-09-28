@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "stdio.h"
 //parameter
 // n: the integer to convert
 
@@ -90,8 +89,6 @@ char	*ft_itoa(int n)
 }
 
 /*
-#include "stdio.h"
-#include "stdlib.h"
 
 int main() {
     // Test Case 1: Positive integer
